@@ -80,15 +80,19 @@ public class RegistrationSteps {
        Driver.waitAndSendText(rp.firstPasswordTextBox,password );
     }
     @Then("user valides the password strength {string}")
-    public void user_valides_the_password_strength(String level) {
+    public void user_valides_the_password_strength(String rgb) {
 
-        if( 1 == Integer.parseInt(level)){
+       /* if( 1 == Integer.parseInt(level)){
             Assert.assertTrue(rp.passwordStrength1.isDisplayed());
         }else if(2 == Integer.parseInt(level)){
             Assert.assertTrue(rp.passwordStrength2.isDisplayed());
         }else if(3 == Integer.parseInt(level)){
             Assert.assertTrue(rp.passwordStrength3.isDisplayed());
+        }else if(4 == Integer.parseInt(level)){
+            Assert.assertTrue(rp.passwordStrength4.isDisplayed());
         }
+*/
+        Assert.assertTrue(rp.returnPasswordStrength(rgb).isDisplayed());
 
 
     }

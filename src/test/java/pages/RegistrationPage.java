@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -39,5 +40,20 @@ public class RegistrationPage {
 
     @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(153, 255, 0)')]")
     public WebElement passwordStrength3;
+
+    //passwordStrength4
+   // @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(153, 255, 0)')]")
+   // public WebElement passwordStrength4;
+
+    public WebElement returnPasswordStrength(String rgb){
+        return Driver.getDriver().findElement(By.xpath("//*[@id='strengthBar']/li[contains(@style,'"+rgb+"')]"));
+    }
+    /*
+    rgb(255, 0, 0)
+    rgb(255, 153, 0)
+    rgb(153, 255, 0)
+
+     */
+
 
 }
